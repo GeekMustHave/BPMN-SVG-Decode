@@ -1,0 +1,33 @@
+= BPMN SVG Decode testing
+John Schuster <John.schuster@phoenixworkgroup.com>
+V2.1b,02/16/18:Developer notes
+:toc: left
+:experimential:
+:imagesdir: ./images
+:pagenums:
+:experimental:
+:source-hightlighter: pygments
+:icons: font
+
+
+Attempt to see if the SVG generated from BPMN can be updated by Inkscape with Title and description 
+whicj will be read later to automatically generate documentation.
+
+== Introduction
+
+We are taking BMPN.IO SVG output file and reading it into Inkscape for updating Title and Descriptionh.
+
+NOTE: It would be preferred if we could do this with `*.BPMN` file.  This file is XML formatted and extremely complex.
+
+.Test Files
+[options="header"]
+|===
+| File name | Content
+| spmn-sample.svg | Larger DWIP flow diagram with title, descriptions and color
+| g5583.svg | Single element on the flow diagram `Status: Subnitted` 
+|===
+
+NOTE: g5583.svg. This version of the file was manually cut out of the larger flow diagram.
+
+
+
