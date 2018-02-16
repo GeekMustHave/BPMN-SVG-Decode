@@ -29,5 +29,71 @@ NOTE: It would be preferred if we could do this with `*.BPMN` file.  This file i
 
 NOTE: g5583.svg. This version of the file was manually cut out of the larger flow diagram.
 
+== Solution
 
+Use Node and some NPM modules to perform the HTML to JSON conversion.
+We are doing this to make the searching of the SVG eaiser and quicker.
+
+=== GIT repository
+
+Use a local GIT repository and attempt to publish to GitHub account.
+
+NOTE: In past attempts at this it failed because I added the readme.md on 
+GITHib and was unable to push it back to this local repository.
+
+Initialize this repository with a README
+This will let you immediately clone the repository to your computer.
+Skip this step if you’re importing an existing repository.
+
+.Cooamnds to push local repository
+----
+git remote add origin https://github.com/GeekMustHave/BPMN-SVG-Decode.git
+git push -u origin master
+----
+
+== nodemon
+
+Nodemon is a utility that will monitor for any changes in your source and automatically restart your server
+
+.initial install of nodemon
+----
+npm install nodemon -g
+----
+
+.Update the `package.json` to use `nodemonnpm start
+----
+{
+  "name": "bmpn-svg-decode",
+  "version": "1.0.0",
+  "description": "Test for BPMN SVG decoding ",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js", <1>
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/geekmusthave/BPMN-SVG-Decode"
+  },
+  "author": "John Schuster",
+  "license": "MIT",
+  "dependencies": {
+    "himalaya": "^1.0.0"
+  }
+}
+----
+<1> This new command will allow for `npm start` to be used  to kick off the code.
+
+=== himalaya 
+
+This node module converts HTML into JSON, plain and simple.
+
+https://github.com/andrejewski/himalaya[GitHub Link]
+
+https://github.com/andrejewski/himalaya/blob/master/text/ast-spec-v1.md[Spec document]
+
+.Install
+----
+npm install himalaya --save
+----
 
